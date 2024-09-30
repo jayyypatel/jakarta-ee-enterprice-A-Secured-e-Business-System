@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xml:lang="en" lang="en">
+
+
+<h:head>
+    <title> The property manager of ID #{managerController.aManager.id}</title>
+</h:head>
+    <h:body>
+        <h1> The property manager of ID #{managerController.aManager.id}</h1>
+        <h:panelGrid columns="2">
+            <h:outputText value="Manager Name:"/>
+            <h:outputText value="#{managerController.propertyManager.firstName} #{managerController.propertyManager.lastName}"/>
+            <h:outputText value="Phone Number:"/>
+            <h:outputText value="#{managerController.propertyManager.phone}"/>
+            <h:outputText value="Mobile Number:"/>
+            <h:outputText value="#{managerController.propertyManager.mobile}"/>
+            <h:outputText value="Email Address:"/>
+            <h:outputText value="#{managerController.propertyManager.email}"/>
+            <h2>Properties managed by this manager : #{allocationController.allocationCount}</h2>
+        </h:panelGrid>
+        <h2>Properties managed by this manager : #{allocationController.allocationCount}</h2>
+
+        <h:panelGroup rendered="#{managerController.allocatedPropertiesCount == 0}">
+            <h:outputText value="This manager has not been allocated with any properties yet."/>
+        </h:panelGroup>
+    </h:body>
+</html>

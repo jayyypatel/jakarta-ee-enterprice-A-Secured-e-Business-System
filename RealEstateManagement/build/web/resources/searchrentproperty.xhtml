@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="layout.xhtml">
+    <ui:define name="title">Search Rent Property</ui:define>
+    <ui:define name="heading">Search for Rent Properties</ui:define>
+    <ui:define name="content">
+        <h:form>
+            <h:panelGrid columns="3">
+                <h:outputLabel value="Property ID: "/>
+                <h:inputText value="#{searchRentPropertyBean.id}" id="id">
+                    <f:convertNumber type="number"/>
+                </h:inputText>
+                <h:message for="id" />
+                
+                <h:commandButton value="Search" action="#{searchRentPropertyBean.search}" />
+            </h:panelGrid>
+        </h:form>
+    </ui:define>
+    <ui:define name="footer">
+    <a href="salepropertylist.xhtml">The list of rent properties</a> |
+    <a href="home.xhtml">Back to Home</a>
+</ui:define>
+</ui:composition>
+</html>

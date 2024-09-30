@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xml:lang="en" lang="en">
+<ui:composition template="layout.xhtml">
+    <ui:define name="title">Search Property Manager</ui:define>
+    <ui:define name="header">Search for a property manager</ui:define>
+    <ui:define name="content">
+        <h:form>
+            <table border="0">
+                <tr>
+                    <td>First Name:</td>
+                    <td><input type="text"/></td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td>
+                    <td><input type="text"/></td>
+                </tr>
+
+
+            </table>
+            <h:commandButton value="Search" action="#{PropertyManagerController.doSearch}"/>
+        </h:form>
+    </ui:define>

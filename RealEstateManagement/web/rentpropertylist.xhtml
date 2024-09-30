@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="layout.xhtml">
+    <ui:define name="title">Rent Property List</ui:define>
+    <ui:define name="heading">Rent Property List</ui:define>
+    <ui:define name="content">
+        <h:form>
+            <h:dataTable value="#{rentPropertyListBean.rentProperties}" var="property" border="1">
+                <h:column>
+                    <f:facet name="header">ID</f:facet>
+                    #{property.id}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Name</f:facet>
+                    #{property.name}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Weekly Rent</f:facet>
+                    #{property.weeklyRent}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Is Furnished</f:facet>
+                    #{property.isFurnished}
+                </h:column>
+                <h:column>
+                    <h:commandLink value="Details" action="#{rentPropertyListBean.viewPropertyDetails(property.id)}"/>
+                </h:column>
+            </h:dataTable>
+
+            <h:panelGroup rendered="#{empty rentPropertyListBean.rentProperties}">
+                <h:outputText value="There are no properties listed." style="color:red;" />
+            </h:panelGroup><br></br>
+            <h:panelGroup style="text-align:center; padding-top: 10px;">
+        <h:outputText value="Total Rent Properties: #{rentPropertyListBean.rentPropertyCount}" style="font-weight:bold;" />
+        </h:panelGroup>
+        </h:form>
+    </ui:define>
+    <ui:define name="footer">
+    <a href="createrentproperty.xhtml">Create a rent property</a> |
+    <a href="home.xhtml">Back to Home</a>
+</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+      xml:lang="en" lang="en">
+
+
+<h:head>
+    <title>Creates a new Property Manager(navigation)</title>
+</h:head>
+<h:body>
+<h1>Create a new manager</h1>
+<hr/>
+        <h:form id="managerForm" >
+            <table border="0">
+                <tr>
+                    <td  >Firs tName:</td>
+                    <td><h:inputText value ="#{managerController.manager.firstName}" required ="true">
+                        <f:validateLength minimum="2" maximum="16"/>
+                    </h:inputText>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Last Name :</td>
+                    <td><input type="text"/></td>
+                </tr>
+                <tr>
+                    <td>Phone :</td>
+                    <td><h:inputText value ="#{managerController.manager.firstName}" required ="true">
+                    <f:validateLength minimum="2" maximum="16"/>
+                    </h:inputText>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Mobile :</td>
+                    <td><h:inputText value ="#{managerController.manager.mobile}" required ="true">
+                    <f:validateLength minimum="11" maximum="13"/>
+                    </h:inputText>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email address :</td>
+                    <td><h:inputText value ="#{managerController.manager.email}" validator = "emailValidator"/></td>
+                </tr>
+            </table>
+            <h:commandButton value="Create" action="#{managerController.doCreateManager}"/>
+
+                    </h:form>
+<hr/>
+</h:body>
+</html>
